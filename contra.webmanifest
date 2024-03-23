@@ -1,0 +1,16 @@
+{
+    "name": "Consumption Tracker",
+    "short_name": "ConTra",
+    "description": "Consumption Tracker",
+    "icons": [
+      {
+        "src": "images/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "theme_color": "#DDC392",
+    "background_color": "#DDC392"
+  }

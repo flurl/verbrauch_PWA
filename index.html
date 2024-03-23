@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Consumption Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Consumption Tracker">
+    <meta name="author" content="postgarage Graz">
+    <meta name="theme-color" content="#DDC392">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="contra.webmanifest">
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div>
+        <button id="export-btn">Export</button>
+      </div>
+      <div id="export-actions" class="hidden">
+        <button id="download-btn">Download</button>
+        <button id="delete-btn">Alte Daten löschen</button>
+      </div>
+      <h1>Personalverbrauch</h1>
+      <div class="container">
+        <select id="fow-select">
+          <option disabled selected value> -- Bitte auswählen -- </option>
+        </select>
+        <table id="articles-table" class="hidden"></table>
+      </div>
+    </main>
+    
+  </body>
+</html>
