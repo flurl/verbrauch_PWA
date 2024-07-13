@@ -1,36 +1,38 @@
 body {
-    font-family: sans-serif;
-    padding: 1rem;
-    font-size: 20px;
+  font-family: sans-serif;
+  padding: 1rem;
+  font-size: 20px;
 }
 
 table {
-    border-collapse: collapse;
-}
-
-td {
-    padding: 0.5rem 0.5rem;
-}
-tr:nth-child(2n) {
-    background-color: bisque;
-}
-
-input, button, select {
+  border-collapse: collapse;
+  
+  & input, button, select {
     font-size: 1rem;
     text-align: center;
     height: 4rem;
     min-width: 4rem;
+    width: 100%
+  }
+
+}
+
+td {
+  padding: 0.5rem 0.5rem;
+}
+tr:nth-child(2n) {
+  background-color: bisque;
 }
 
 select {
-    font-size: 2rem
+  font-size: 2rem
 }
 
 input.article-count {
-    width: 4em;
+  width: 4em;
 }
 
 
 .hidden {
-    display: none;
+  display: none;
 }
