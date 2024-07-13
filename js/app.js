@@ -150,6 +150,28 @@ const setupDB = () => {
 }
 
 
+const showData = () => {
+    let table = document.getElementById('data-table');
+    table.innerHTML = '';
+    
+    const transaction = db.transaction(["consumed-articles"]);
+    const objectStore = transaction.objectStore("consumed-articles");
+    let result = objectStore.getAll();
+    result.onsuccess = (e) => {
+        let consumedArticles = e.target.result;
+        for (row of consumedArticles) {
+            let tr = document.createElement('tr');
+            for (cell of row) {
+                let td = document.createElement('td');
+                td.innerText = cell;
+                tr.append(td);
+            }
+            table.append(tr);
+        };
+    }
+}
+
+
 const downloadData = () => {
     const transaction = db.transaction(["consumed-articles"]);
     const objectStore = transaction.objectStore("consumed-articles");
@@ -227,16 +249,21 @@ const ready = () => {
     document.getElementById('fow-select').addEventListener('change', (e) => {
         document.getElementById('articles-table').classList.remove('hidden');
     });
-    document.getElementById('export-btn').addEventListener('click', (e) => {
-        let ae = document.getElementById('export-actions');
+    document.getElementById('data-btn').addEventListener('click', (e) => {
+        let ae = document.getElementById('data-actions');
         if (ae.classList.contains('hidden')) {
             let pw = prompt("Password");
             if (pw === "0000") {
                 ae.classList.remove('hidden');
+                // clear data table
+                document.getElementById('data-table').innerHTML = '';
             }
         } else {
             ae.classList.add('hidden');
         }
+    });
+    document.getElementById('show-data-btn').addEventListener('click', (e) => {
+        showData();
     });
     document.getElementById('download-btn').addEventListener('click', (e) => {
         downloadData();
