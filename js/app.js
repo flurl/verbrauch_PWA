@@ -228,7 +228,15 @@ const ready = () => {
         document.getElementById('articles-table').classList.remove('hidden');
     });
     document.getElementById('export-btn').addEventListener('click', (e) => {
-        document.getElementById('export-actions').classList.remove('hidden');
+        let ae = document.getElementById('export-actions');
+        if (ae.classList.contains('hidden')) {
+            let pw = prompt("Password");
+            if (pw === "0000") {
+                ae.classList.remove('hidden');
+            }
+        } else {
+            ae.classList.add('hidden');
+        }
     });
     document.getElementById('download-btn').addEventListener('click', (e) => {
         downloadData();
