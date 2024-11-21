@@ -58,7 +58,7 @@ const saveConsumption = () => {
         console.log('ID: ' + articleId);
         let articleCount = parseInt(inp.value);
         if (articleCount > 0) {
-            consumedArticles.push([Math.floor(date.getTime() / 1000), `${date.getFullYear()}-${date.getMonth()}`, fow, articleId, getArtikelNameById(articleId), articleCount]);
+            consumedArticles.push([Math.floor(date.getTime() / 1000), `${date.getFullYear()}-${date.getMonth()+1}`, fow, articleId, getArtikelNameById(articleId), articleCount]);
         }
     });
 
