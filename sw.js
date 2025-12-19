@@ -1,4 +1,4 @@
-const cacheName = 'contra-v3';
+const cacheName = 'contra-v4';
 const contentToCache = [
     'index.html',
     'js/app.js',

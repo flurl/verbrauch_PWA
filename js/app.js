@@ -28,12 +28,23 @@ const fieldsOfWork = [
 const askForConfirmation = () => {
     let fow = document.getElementById('fow-select').value;
     let articleCountInputs = document.querySelectorAll('input.article-count');
-    let text = `Folgende Artikel werden auf ${fow} gebucht: \n`;
+    let text = ``;
+    let max = 0;
+    let amount = 0;
     articleCountInputs.forEach(inp => {
+        amount = parseInt(inp.value);
+        if (amount > max) {
+            max = amount;
+        }
         if (parseInt(inp.value) !== 0) {
             text += `${inp.value} x ${getArtikelNameById(inp.dataset.articleId)}\n`;
         }
     });
+    if (max <= 0) {
+        alert('Keine Artikel ausgewählt');
+        return false;
+    }
+    text = `Folgende Artikel werden auf ${fow} gebucht: \n ${text}`;
     return confirm(text.replaceAll('free-text-', ''));
 }
 
